@@ -1,6 +1,5 @@
 import random
 
-
 # Создаем списки просто значений, и выигрышных комбинаций
 
 var = ["камень", "ножницы", "бумага"]
@@ -10,19 +9,19 @@ comp_win = [["ножницы", "камень"], ["бумага", "ножницы
 game = True
 
 while game:
-    round = []
+    rou = []
     player_move = input('Введите свой выбор - "Камень", "Ножницы" или "Бумага": ').lower()
     if player_move not in var:
         print("Вы ввели недопустимое значение, попробуйте снова")
         continue
 
-    round.append(player_move)
-    round.append(random.choice(var))
-    print(round)
+    rou.append(player_move)
+    rou.append(random.choice(var))
+    print(rou)
 
-    if round in player_win:
+    if rou in player_win:
         print("Player WIN")
-    elif round in comp_win:
+    elif rou in comp_win:
         print('Comp WIN')
     else:
         print("Ничья")
