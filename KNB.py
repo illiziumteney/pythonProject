@@ -8,16 +8,25 @@ comp_win = [["ножницы", "камень"], ["бумага", "ножницы
 
 game = True
 
+# body of game
+
 while game:
     rou = []
+
+# Ход игрока
+
     player_move = input('Введите свой выбор - "Камень", "Ножницы" или "Бумага": ').lower()
     if player_move not in var:
         print("Вы ввели недопустимое значение, попробуйте снова")
         continue
 
+# Ход NPC
+
     rou.append(player_move)
     rou.append(random.choice(var))
     print(rou)
+
+# Определяем победителя
 
     if rou in player_win:
         print("Player WIN")
@@ -27,6 +36,8 @@ while game:
         print("Ничья")
 
     print()
+
+# Будем продолжать игру или нет
 
     resume = input("Введите Да, если хотите продолжить: ")
     if resume.lower() != 'да':
